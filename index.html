@@ -8,108 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles for a more sophisticated look */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f7; /* Apple-like light gray */
-            color: #1d1d1f; /* Apple-like off-black */
-        }
-        /* Custom red for branding */
-        .text-custom-red {
-            color: #e53e3e;
-        }
-        .bg-custom-red {
-            background-color: #e53e3e;
-        }
-        .border-custom-red {
-            border-color: #e53e3e;
-        }
-        /* Section styling with varied backgrounds */
-        .section {
-            padding-top: 8rem;
-            padding-bottom: 8rem;
-        }
-        .section-dark {
-            background-color: #000000;
-            color: #f5f5f7;
-        }
-        .section-gray-dark {
-            background-color: #1d1d1f;
-            color: #f5f5f7;
-        }
-        .section-light {
-            background-color: #ffffff;
-            color: #1d1d1f;
-        }
-        .section-gray-light {
-            background-color: #f5f5f7;
-            color: #1d1d1f;
-        }
-        /* Animation for elements on scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Header styling */
-        header {
-            transition: background-color 0.4s ease;
-        }
-        /* Service card styling with enhanced gradient */
-        .service-card {
-            background: radial-gradient(circle at 50% -50%, #dde1e6, #ffffff); /* More noticeable gradient */
-            border: 1px solid #e8e8ed; /* Softer border for the new background */
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            height: 100%;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        .service-icon {
-            height: 48px;
-            width: 48px;
-            margin-bottom: 1.5rem;
-            color: #e53e3e;
-        }
-        /* CTA Button Styles */
-        .btn {
-            display: inline-block;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-        .btn-primary {
-            background-color: #e53e3e;
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: #c53030;
-            transform: scale(1.05);
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: #e53e3e;
-            border: 2px solid #e53e3e;
-        }
-        .btn-secondary:hover {
-            background-color: #e53e3e;
-            color: white;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
 </head>
 <body class="antialiased">
 
@@ -117,11 +17,10 @@
     <header id="main-header" class="bg-black/70 backdrop-blur-xl fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <a href="#hero" class="block">
+                <a href="#home" class="block">
                      <img src="https://i.ibb.co/HT51pn6G/logo.png" alt="Logo Nova Residenza" class="h-12 bg-white px-2 py-1 rounded-md">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#mision" class="text-gray-300 hover:text-white transition-colors">Nosotros</a>
                     <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a>
                     <a href="#legal" class="text-gray-300 hover:text-white transition-colors">Asesoría Legal</a>
                     <a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a>
@@ -135,7 +34,6 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/90 border-t border-gray-800">
-            <a href="#mision" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Nosotros</a>
             <a href="#servicios" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Servicios</a>
             <a href="#legal" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Asesoría Legal</a>
             <a href="#contacto" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Contacto</a>
@@ -143,35 +41,48 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="section section-dark min-h-screen flex items-center">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 reveal">Agencia Inmobiliaria & Asesoría Legal</h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8 reveal" style="transition-delay: 200ms;">Te ayudamos en cada paso de la compra, venta o arriendo de tu propiedad.</p>
-                <div class="reveal" style="transition-delay: 400ms;">
-                    <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1 class="hero-title text-center">
+                        <span class="title-nova">Agencia Inmobiliaria</span><br>
+                        <span class="title-residenza">& Asesoría Legal</span>
+                    </h1>
+                    
+                    <!-- <p class="hero-description">
+                        Agencia Inmobiliaria & Asesoría Legal
+                    </p> -->
+                    
+                    <div class="hero-mission">
+                        <p>
+                            Te ayudamos en cada paso de la compra, venta o arriendo de tu propiedad.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button onclick="scrollToSection('servicios')" class="hero-btn-primary">
+                            Descubre Nuestros Servicios
+                        </button>
+                        <button onclick="scrollToSection('contacto')" class="hero-btn-secondary">
+                            Contactar Ahora
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <button onclick="scrollToSection('servicios')" class="scroll-btn">
+                <i class="fas fa-chevron-down"></i>
+            </button>
         </div>
     </section>
 
-    <!-- Misión y Compromiso Section -->
-    <section id="mision" class="section section-gray-light">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Misión y Visión</h2>
-                    <p class="text-gray-600 mb-6">Buscamos satisfacer tus requerimientos específicos con responsabilidad, eficiencia y la mejor energía para que este importante paso en tu vida, sea lo más tranquilo, agradable y beneficioso para ti.</p>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Compromiso</h2>
-                    <p class="text-gray-600 mb-8">Nuestro principal compromiso es entregar un servicio personalizado. El equipo de expertos en Nova Residenza está formado por profesionales experimentados que brindan una visión estratégica e integral.</p>
-                    <a href="#servicios" class="btn btn-secondary">Ver nuestros servicios</a>
-                </div>
-                <div class="reveal">
-                    <img src="https://i.ibb.co/LXbpFwNb/oficina.webp" alt="Imagen de oficina moderna" class="rounded-2xl shadow-xl w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Call to Action Section -->
     <section class="section section-light">
@@ -293,29 +204,59 @@
                 <div class="reveal">
                     <h3 class="text-3xl font-bold mb-6">Qué podemos hacer por ti</h3>
                     <div class="space-y-6">
-                        <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Estudio de Título</h4>
-                            <p class="text-gray-600">Evaluación exhaustiva de los antecedentes jurídicos del inmueble.</p>
+                        <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-file-contract text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Estudio de Título</h4>
+                                <p class="text-gray-600">Evaluación exhaustiva de los antecedentes jurídicos del inmueble.</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Posesión Efectiva</h4>
-                            <p class="text-gray-600">Realizamos el proceso legal para que los herederos dispongan de los bienes.</p>
+                        <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-users text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Posesión Efectiva</h4>
+                                <p class="text-gray-600">Realizamos el proceso legal para que los herederos dispongan de los bienes.</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Redacción de Contratos</h4>
-                            <p class="text-gray-600">Confeccionamos contratos a la medida, ajustados a sus necesidades.</p>
+                        <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-pen-to-square text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Redacción de Contratos</h4>
+                                <p class="text-gray-600">Confeccionamos contratos a la medida, ajustados a sus necesidades.</p>
+                            </div>
                         </div>
-                         <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Tasación</h4>
-                            <p class="text-gray-600">Determinamos el valor comercial de la propiedad.</p>
+                         <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-calculator text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Tasación</h4>
+                                <p class="text-gray-600">Determinamos el valor comercial de la propiedad.</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Asesoría</h4>
-                            <p class="text-gray-600">Instruimos a nuestros clientes orientándolos a la solución más adecuada.</p>
+                        <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-handshake text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Asesoría</h4>
+                                <p class="text-gray-600">Instruimos a nuestros clientes orientándolos a la solución más adecuada.</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-100 p-6 rounded-xl">
-                            <h4 class="font-semibold text-lg">Otros Trámites y Juicios</h4>
-                            <p class="text-gray-600">Experiencia en diversos asuntos inmobiliarios, civiles y comerciales.</p>
+                        <div class="bg-gray-100 p-6 rounded-xl flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-gavel text-2xl text-custom-red"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Otros Trámites y Juicios</h4>
+                                <p class="text-gray-600">Experiencia en diversos asuntos inmobiliarios, civiles y comerciales.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-10">
@@ -366,41 +307,7 @@
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileLinks = document.querySelectorAll('#mobile-menu a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Reveal elements on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        revealElements.forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <script src="./assets/js/main.js"></script>
 
 </body>
 </html>
