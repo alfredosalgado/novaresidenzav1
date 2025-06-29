@@ -1,8 +1,55 @@
 /* Custom styles for a more sophisticated look */
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f5f5f7; /* Apple-like light gray */
     color: #1d1d1f; /* Apple-like off-black */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility improvements */
+:focus {
+    outline: 2px solid #e53e3e;
+    outline-offset: 2px;
+}
+
+/* Skip to main content for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #e53e3e;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 /* Custom red for branding */
@@ -43,10 +90,19 @@ body {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    will-change: opacity, transform;
 }
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
+}
+
+/* Performance optimization for animations */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
 }
 
 /* Header styling */
